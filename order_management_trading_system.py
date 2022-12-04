@@ -103,15 +103,6 @@ class Exchange:
      
         
         
-a = Exchange()
-print(a.handle_order("102,buy,8,9"))
-print(a.handle_order("101,sell,7,9"))
-#a.handle_order("103,   sell, 12,10")
-#a.handle_order("104,sell,3,10")
-#print(a.handle_order("101,sell,12,10"))
-#print(a.handle_order("105,buy,7,9"))
-#print(a.handle_order("102,buy,25,12"))
-print(a.sell)
-#print(a.handle_order("102,buy,10,12"))
+
 
             
