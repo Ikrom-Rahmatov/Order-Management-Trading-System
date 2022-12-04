@@ -94,11 +94,26 @@ class Exchange:
                     heapq.heappush(self.buy, x)
         return res
                 
-        # nned to work on the sell side buy side is done
+        
+        
+Example:
+    order1 = "101,buy,10, 8"  # input order: index0 = order id, index1 = action, index2= quantity, index3 = price .
+    order2 = "102,buy, 12, 10"
+    order3 = "103,sell, 10, 10"
+    trade = Exchange()
+    trade.handle_order(order1) # will return "no pending selling orders" since there is orders in the queue to be sold. Order will be added to the queue to
+                               # executed when an order with "sell" action comes in if the prices satisfy the condition
+    trade.handle_order(order2) # will return "no pending selling orders" since there is orders in the queue to be sold
+    trade.handle_order(order3) # since there are two pending order to be executed with an opposite action, it will execute against the pending orders
+                               # whose prices greater than or equal to the prices from the opposite action queue based on the order placement. FIFO
+                               # since the price of the first order is less than the price of the current action,it will het skipped and the order is excuted
+                               # against the second order.
+                               # return value ["103, 10, 10"]
+                               # buy queue after executing is self.buy = [[8, 1,10, 101], [10, 2, 2, 102]]
+                               # sell queue is empty. 
         
             
-    def myfunc(self):
-        return self.sell
+    
 
      
         
