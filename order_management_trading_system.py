@@ -108,7 +108,7 @@ Example:
                                # whose prices greater than or equal to the prices from the opposite action queue based on the order placement. FIFO
                                # since the price of the first order is less than the price of the current action,it will het skipped and the order is excuted
                                # against the second order.
-                               # return value ["103, 10, 10"]
+                               # return value ["103,102 10, 10"]
                                # buy queue after executing is self.buy = [[8, 1,10, 101], [10, 2, 2, 102]]
                                # sell queue is empty. 
         
